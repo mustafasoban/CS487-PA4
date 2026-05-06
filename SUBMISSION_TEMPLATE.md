@@ -15,7 +15,7 @@ Copy this file to <code style="color:#111827;background:#ddd6fe;padding:2px 4px;
 
 | Field | Value |
 |---|---|
-| Name | [YOUR NAME] |
+| Name | Mustafa Soban |
 | Roll Number | [YOUR ROLL NUMBER] |
 | GitHub Repository URL | [YOUR GITHUB REPO URL] |
 | Resource Group | `rg-sp26-[YOUR ROLL NUMBER]` |
@@ -34,25 +34,31 @@ Copy this file to <code style="color:#111827;background:#ddd6fe;padding:2px 4px;
 
 ### Evidence 1.1: Forked Repository
 
-![Forked Repository](docs/Task1_files/image012.png)
+![Forked Repository 1](docs/Task1_files/image001.png)
+![Forked Repository 2](docs/Task1_files/image002.png)
 
-Description: This screenshot shows my working fork of the CS487-PA4 repository under my GitHub account, containing all the starter code needed for the PA4 deployment.
+Description: These screenshots show my working fork of the CS487-PA4 repository under my GitHub account, containing all the starter code needed for the PA4 deployment.
 
 ### Evidence 1.2: App Service Overview
 
-![App Service Overview](docs/Task1_files/image005.png)
+![App Service Overview 1](docs/Task1_files/image003.png)
+![App Service Overview 2](docs/Task1_files/image004.png)
+![App Service Overview 3](docs/Task1_files/image005.png)
 
-Description: Shows the Azure App Service overview page verifying that the web app is in the "Running" state within my assigned resource group and region.
+Description: Progress screenshots of the Azure App Service deployment verifying that the web app is successfully provisioned and in the "Running" state within my assigned resource group.
 
 ### Evidence 1.3: Deployment Center / GitHub Actions
 
-![Deployment Center](docs/Task1_files/image022.png)
+![Deployment Center 1](docs/Task1_files/image006.png)
+![Deployment Center 2](docs/Task1_files/image007.png)
+![Deployment Center 3](docs/Task1_files/image008.png)
 
-Description: Demonstrates that the Deployment Center is configured with GitHub Actions, successfully linking the Azure Web App to my repository's main branch for CI/CD.
+Description: These images demonstrate the Deployment Center configuration using GitHub Actions, successfully linking the Azure Web App to my repository's main branch for CI/CD synchronization.
 
 ### Evidence 1.4: Live Web UI
 
-![Live Web UI](docs/Task1_files/image008.png)
+![Live Web UI 1](docs/Task1_files/image009.png)
+![Live Web UI 2](docs/Task1_files/image010.png)
 
 Description: Shows the TaskFlow frontend page loading successfully in a web browser, confirming the App Service is serving the Node.js application over HTTPS.
 
@@ -62,37 +68,47 @@ Description: Shows the TaskFlow frontend page loading successfully in a web brow
 
 ### Evidence 2.1: ACR Overview
 
-![ACR Overview](docs/Task1_files/image015.png)
+![ACR Overview 1](docs/Task1_files/image011.png)
+![ACR Overview 2](docs/Task1_files/image012.png)
 
-Description: Overview of my Azure Container Registry configured with the Basic SKU inside my assigned resource group.
+Description: Overview and creation stages of my Azure Container Registry configured with the Basic SKU inside my assigned resource group.
 
 ### Evidence 2.2: Docker Builds
 
-![Docker Builds](docs/Task1_files/image003.png)
+![Docker Builds 1](docs/Task1_files/image013.png)
+![Docker Builds 2](docs/Task1_files/image014.png)
+![Docker Builds 3](docs/Task1_files/image015.png)
+![Docker Builds 4](docs/Task1_files/image016.png)
 
-Description: Terminal output showing the successful local Docker builds for the `validate-api`, `report-job`, and `func-app` images using the provided starter folders.
+Description: Terminal output showing the successful local Docker builds and tagging process for the `validate-api`, `report-job`, and `func-app` images using the provided starter folders.
 
 ### Evidence 2.3: ACR Repositories
 
-![ACR Repositories](docs/Task1_files/image028.png)
+![ACR Repositories 1](docs/Task1_files/image017.png)
+![ACR Repositories 2](docs/Task1_files/image018.png)
 
-Description: CLI output confirming that all three images (`validate-api:v1`, `report-job:v1`, and `func-app:v1`) were successfully pushed to my Azure Container Registry.
+Description: CLI and Portal output confirming that all three images (`validate-api:v1`, `report-job:v1`, and `func-app:v1`) were successfully pushed to my Azure Container Registry.
 
 ---
 
 ## Task 3: Durable Function Implementation (12 points)
 
-### Evidence 3.1: Completed Function Code
+### Evidence 3.1: Completed Function Code Setup
 
 [function_app.py](function-app/function_app.py)
 
-Description: The completed function code implements a Durable Functions orchestrator that first yields to the `validate_activity` and, if the order is valid, proceeds to spawn the ACI via the `report_activity`.
+![Code Setup 1](docs/Task1_files/image019.png)
+![Code Setup 2](docs/Task1_files/image020.png)
+![Code Setup 3](docs/Task1_files/image021.png)
+
+Description: Documentation of the completed function code setup and environment preparation, implementing the Durable Functions orchestrator chaining validation and report generation.
 
 ### Evidence 3.2: Local Function Handler Listing
 
-![Local Function Handler](docs/Task1_files/image019.png)
+![Local Function Handler 1](docs/Task1_files/image022.png)
+![Local Function Handler 2](docs/Task1_files/image023.png)
 
-Description: Shows the output of `func start` confirming that the Durable Functions runtime successfully registered the HTTP starter, orchestrator, and both activity handlers.
+Description: Shows the output of `func start` and local execution confirming that the Durable Functions runtime successfully registered the HTTP starter, orchestrator, and both activity handlers.
 
 ---
 
@@ -100,21 +116,25 @@ Description: Shows the output of `func start` confirming that the Durable Functi
 
 ### Evidence 4.1: Function App Container Configuration
 
-![Function App Container](docs/Task1_files/image001.png)
+![Function App Container 1](docs/Task1_files/image024.png)
+![Function App Container 2](docs/Task1_files/image025.png)
+![Function App Container 3](docs/Task1_files/image026.png)
 
-Description: Verifies that the Function App is configured to pull and run my custom `func-app:v1` Docker container from my Azure Container Registry.
+Description: Setup screens verifying the Function App is being configured to pull and run my custom `func-app:v1` Docker container directly from my Azure Container Registry.
 
-### Evidence 4.2: Orchestration Smoke Test
+### Evidence 4.2: Orchestration Initialization
 
-![Orchestration Smoke Test](docs/Task1_files/image011.png)
+![Orchestration Smoke Test 1](docs/Task1_files/image027.png)
+![Orchestration Smoke Test 2](docs/Task1_files/image028.png)
 
-Description: Terminal output of the initial POST request to the HTTP starter, proving the function triggered and returned the standard management URLs (including the instance ID).
+Description: Terminal and Portal tracking of the initial POST request to the HTTP starter and function execution logs, proving the function triggered.
 
-### Evidence 4.3: Expected Failed Status Before Downstream Wiring
+### Evidence 4.3: Status Checkpoint
 
-![Expected Failed Status](docs/Task1_files/image025.png)
+![Expected Failed Status 1](docs/Task1_files/image029.png)
+![Expected Failed Status 2](docs/Task1_files/image030.png)
 
-Description: Shows the orchestration status as "Failed" because it attempted to reach the AKS validator before the `VALIDATE_URL` environment variable was configured, which is the expected checkpoint behavior here.
+Description: Final state tracking for Task 4, capturing the orchestration status URLs and output checks prior to full downstream component wiring (AKS/ACI integration).
 
 ---
 
@@ -122,39 +142,39 @@ Description: Shows the orchestration status as "Failed" because it attempted to 
 
 ### Evidence 5.1: AKS Cluster
 
-![AKS Cluster](docs/Task1_files/image007.png)
+TODO: Embed screenshot of AKS overview showing `aks-<rollnum>` succeeded.
 
-Description: Portal overview of the AKS cluster showing it successfully provisioned with a single Standard_B2s node in my resource group.
+Description: TODO: State node count, node size, region, and resource group.
 
 ### Evidence 5.2: Kubernetes Nodes and Pods
 
-![K8s Nodes and Pods](docs/Task1_files/image030.png)
+TODO: Embed screenshot of `kubectl get nodes` and `kubectl get pods`.
 
-Description: CLI output of `kubectl get nodes` and `kubectl get pods`, proving the node is ready and the validator pod is in the Running state.
+Description: TODO: Explain that the validator pod is scheduled and running.
 
 ### Evidence 5.3: Kubernetes Service
 
-![Kubernetes Service](docs/Task1_files/image014.png)
+TODO: Embed screenshot of `kubectl get service validate-service`.
 
-Description: CLI output of `kubectl get service validate-service` displaying the assigned LoadBalancer EXTERNAL-IP and port 8080.
+Description: TODO: Identify the external IP and port exposed by the LoadBalancer.
 
 ### Evidence 5.4: Validator API Tests
 
-![Validator API Tests](docs/Task1_files/image009.png)
+TODO: Embed screenshot of `curl /health`, a valid `curl /validate`, and an invalid `curl /validate`.
 
-Description: Curl requests showing the `/health` endpoint responding, a valid order returning `valid: true`, and an invalid order (`qty > 100`) returning `valid: false`.
+Description: TODO: Explain the accepted path and the `qty > 100` rejection rule.
 
 ### Evidence 5.5: Function App `VALIDATE_URL`
 
-![VALIDATE_URL Setting](docs/Task1_files/image021.png)
+TODO: Embed screenshot showing the Function App application setting `VALIDATE_URL`.
 
-Description: Shows the Function App's configuration blade where `VALIDATE_URL` is set to the AKS LoadBalancer IP, linking the orchestrator to the validator microservice.
+Description: TODO: Explain how the Durable Function reaches the AKS validator.
 
 ### Evidence 5.6: AKS Idle Behavior
 
-![AKS Idle Behavior](docs/Task1_files/image004.png)
+TODO: Embed AKS metrics screenshot and/or `kubectl` output after the service is idle.
 
-Description: Proves that the AKS node and pod remain constantly running and available even when there is no active traffic or orders being processed.
+Description: TODO: Explain that the AKS node remains running even when there are no orders.
 
 ---
 
@@ -162,39 +182,39 @@ Description: Proves that the AKS node and pod remain constantly running and avai
 
 ### Evidence 6.1: Blob Container
 
-![Blob Container](docs/Task1_files/image018.png)
+TODO: Embed screenshot of the `reports` blob container.
 
-Description: Shows the `reports` container successfully created inside the designated Azure Storage Account to hold the generated PDFs.
+Description: TODO: Explain where generated PDFs are stored.
 
 ### Evidence 6.2: Manual ACI Run
 
-![Manual ACI Run](docs/Task1_files/image027.png)
+TODO: Embed screenshot of `az container show` for `ci-report-test`.
 
-Description: CLI output verifying the manual ACI execution (`ci-report-test`) transitioned to a "Succeeded" state and exited after completing its batch work.
+Description: TODO: State the final container state and why the job exits.
 
 ### Evidence 6.3: ACI Logs
 
-![ACI Logs](docs/Task1_files/image010.png)
+TODO: Embed screenshot of `az container logs`.
 
-Description: Container logs displaying the internal script output, confirming the PDF generation and successful upload to blob storage.
+Description: TODO: Explain what the report job printed after generating and uploading the PDF.
 
 ### Evidence 6.4: Generated PDF
 
-![Generated PDF](docs/Task1_files/image029.png)
+TODO: Embed screenshot showing `TEST-001.pdf` in Blob Storage or opened from Blob Storage.
 
-Description: Shows the newly created PDF file existing within the Azure Blob Storage `reports` container.
+Description: TODO: Explain how this proves the ACI wrote to storage.
 
 ### Evidence 6.5: Function App Managed Identity and IAM
 
-![Managed Identity](docs/Task1_files/image006.png)
+TODO: Embed screenshots of system-assigned identity enabled and Contributor role assignment on your resource group.
 
-Description: Displays the user-assigned managed identity attached to the Function App, granting it the necessary permissions to dynamically spawn ACI containers without hardcoded credentials.
+Description: TODO: Explain why the Function App needs this permission to create ACIs.
 
 ### Evidence 6.6: Report App Settings
 
-![Report App Settings](docs/Task1_files/image024.png)
+TODO: Embed screenshot of `REPORT_*`, `ACR_*`, `STORAGE_CONN`, and `SUBSCRIPTION_ID` settings.
 
-Description: Shows the Function App environment variables configured with the ACR details, resource group, and storage connection strings necessary for the ACI creation SDK call.
+Description: TODO: Explain what each group of settings is used for. Mask secrets.
 
 ---
 
@@ -202,27 +222,27 @@ Description: Shows the Function App environment variables configured with the AC
 
 ### Evidence 7.1: Web App Wiring
 
-![Web App Wiring](docs/Task1_files/image002.png)
+TODO: Embed screenshot showing `FUNCTION_START_URL` and `FUNCTION_STATUS_URL` configured on the Web App.
 
-Description: Verifies that the Web App's configuration includes the `FUNCTION_START_URL` and `FUNCTION_STATUS_URL`, completing the frontend-to-backend connection.
+Description: TODO: Explain how the frontend starts and polls the Durable orchestration.
 
 ### Evidence 7.2: Happy Path UI
 
-![Happy Path UI](docs/Task1_files/image017.png)
+TODO: Embed screenshots of the form before submit, Running status, and Completed status with report URL.
 
-Description: Shows the full Web App lifecycle for a valid order: submitting the form, showing the "Running" state, and eventually reaching "Completed" with a generated report link.
+Description: TODO: Explain the valid order payload and final result.
 
 ### Evidence 7.3: Backend Participation
 
-![Backend Participation](docs/Task1_files/image013.png)
+TODO: Embed screenshots showing Function App invocation, AKS validator evidence, ACI evidence, and Blob PDF evidence.
 
-Description: Shows Azure Monitor/Logs confirming the orchestrator executed, AKS received the validation request, and the ephemeral ACI was spawned to write the PDF for this specific order.
+Description: TODO: Trace the same order ID across services.
 
 ### Evidence 7.4: Reject Path UI
 
-![Reject Path UI](docs/Task1_files/image026.png)
+TODO: Embed screenshot of an order with `qty > 100` being rejected.
 
-Description: Shows the Web App immediately rejecting an invalid order (`qty > 100`). Because the orchestrator short-circuits here, no ACI report job was spawned, saving compute resources.
+Description: TODO: Explain why no report ACI should be created for this order.
 
 ---
 
@@ -230,9 +250,9 @@ Description: Shows the Web App immediately rejecting an invalid order (`qty > 10
 
 ### Evidence 8.1: Architecture Diagram
 
-![Architecture Diagram](docs/Task1_files/image020.png)
+TODO: Embed your architecture diagram from `docs/`.
 
-Description: My system architecture diagram illustrating the CI/CD pipeline, the orchestrator's integrations with AKS and ACI, and the final output flow to Blob Storage.
+Description: TODO: Confirm that it shows GitHub, App Service, Durable Function, AKS, ACI, Blob Storage, ACR, and IAM.
 
 ### Question 8.2: Service Selection
 
@@ -248,9 +268,9 @@ If implemented with plain HTTP functions, a one-minute report generation would l
 
 ### Question 8.5: Cost Review
 
-![Cost Management](docs/Task1_files/image023.png)
+TODO: Embed Cost Management screenshot scoped to your resource group.
 
-Description: The Azure Cost Analysis dashboard scoped to my resource group. The single most expensive resource was the AKS cluster (specifically the Virtual Machine Scale Set), as it provisions dedicated VM compute that bills constantly for as long as the cluster is active, unlike the serverless consumption resources.
+Description: TODO: Identify the most expensive resource and explain why.
 
 ### Question 8.6: Challenges Faced
 
